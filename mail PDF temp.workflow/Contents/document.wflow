@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>444.7</string>
+	<key>AMApplicationVersion</key>
+	<string>2.8</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.mail.message-object</string>
+						<string>com.apple.mail.mailbox-object</string>
+						<string>com.apple.mail.account-object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Mail</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>itemType</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.mail.message-object</string>
+						<string>com.apple.mail.mailbox-object</string>
+						<string>com.apple.mail.account-object</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>AMSelectedInputType</key>
+				<string>com.apple.mail.message-object</string>
+				<key>AMSelectedOutputType</key>
+				<string>com.apple.mail.message-object</string>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Selected Mail Items 2.action</string>
+				<key>ActionName</key>
+				<string>Get Selected Mail Messages</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>itemType</key>
+					<string>com.apple.mail.message-object</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.GetSelectedMailItems2</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryMail</string>
+				</array>
+				<key>Class Name</key>
+				<string>Get_Selected_Mail_Items_2</string>
+				<key>InputUUID</key>
+				<string>71884F0E-B3DE-468C-93BF-8B7AC20CC5BE</string>
+				<key>Keywords</key>
+				<array/>
+				<key>OutputUUID</key>
+				<string>51924342-B4AF-4B41-906B-3C3C678D57EC</string>
+				<key>UUID</key>
+				<string>57849440-1B58-4DBD-B6D8-2F64C57A72D1</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Mail</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>com.apple.mail.message-object</string>
+						<key>name</key>
+						<string>itemType</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>649.000000:173.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Get Selected Mail Items 2.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>tell application "Mail"	set msg to the first message of mailbox "a_Receipts-Biz" of account "Dmail"	set theText to content of msg	set theFile to ("/Users/dh/Downloads/" as string) &amp; "mailmsg.rtf"	set theFileID to open for access file theFile with write permission	write theText to theFileID	close access theFileIDend telltell application "TextEdit"	set theFile to ("/Users/dh/Downloads/" as string) &amp; "mailmsg.rtf"	set newdoc to open (theFile as alias)	print newdoc --without print dialog	-- close newdocend tell</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>B7961028-1C27-452B-B12E-6E4D3D68B222</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>C10CF8FF-DAAA-4D46-A2DD-3C252B78B609</string>
+				<key>UUID</key>
+				<string>D4115E4F-C91B-432C-BD7E-707F2462EFB5</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>649.000000:419.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>-- OmniGraffle Export to PDF-- 2018 Damon Hamm-- Converts selected OmniGraffle files in the finder to PDFs and saves them in the original location.-- Original script based on Greg Titus's at http://forums.omnigroup.com/showthread.php?t=106&amp;highlight=export+applescripttell application "Finder"	set these_items to the selectionend tellrepeat with i from 1 to the count of these_items	set this_item to (item i of these_items) as alias	set this_info to info for this_item	-- insert actions here for: this_item		set item_path to POSIX path of this_item	set item_folder to (parent of (item i of these_items)) as string	set item_name to name of (item i of these_items)	set item_ext to name extension of (item i of these_items)		set exp_name to my rename(item_name, item_ext, "pdf")	set exp_path to item_folder &amp; exp_name		set msg to "Path: " &amp; item_path &amp; ", Exp: " &amp; exp_path	--display dialog msg buttons {"OK"} default button 1		my omniConvert(this_item, 	, exp_path)	-- Uncomment this line if you have CocoThumb installed	-- my createThumb(exp_path)	end repeat-- this sub-routine just comes up with the new nameon rename(item_name, item_ext, new_extension)	tell application "Finder"		if the item_ext is "" then			set the trimmed_name to the file_name		else			set the trimmed_name to text 1 thru -((length of item_ext) + 2) of the item_name		end if		set target_name to (the trimmed_name &amp; "." &amp; new_extension) as string	end tell	return the target_nameend rename-- this sub-routine does the export on omniConvert(source_file, source_path, target_path)	with timeout of 900 seconds		tell application "OmniGraffle"			-- save the current export settings so we can replace them later			set oldAreaType to area of export settings			set oldBorder to border of export settings			set oldBackground to background of export settings									-- here is where you set the export settings you want			set area of export settings to all graphics			set border of export settings to false			set background of export settings to false			-- open the file if it isn't already open			set needToOpen to (count (documents whose path is source_path)) is 0			if needToOpen then				open source_file			end if						-- do the export			set docsWithPath to documents whose path is source_path			set theDoc to first item of docsWithPath			save theDoc in file target_path						-- if the file wasn't already open, close it again			if needToOpen then				close theDoc			end if		end tell		-- put the original export settings back		set area of export to oldAreaType		set border of export to oldBorder		set background of export to oldBackground		l	end timeoutend omniConvert</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>820786B2-7AC7-4BA3-B10F-FE5F1C460DB2</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>B2329B82-278E-49D4-A3A2-A317C816740B</string>
+				<key>UUID</key>
+				<string>EAE67AA6-73E3-4A91-B371-EA34D1849AE7</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>649.000000:665.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>3105C445-78B5-439D-AF2D-11170F0991B0</key>
+		<dict>
+			<key>from</key>
+			<string>57849440-1B58-4DBD-B6D8-2F64C57A72D1 - 57849440-1B58-4DBD-B6D8-2F64C57A72D1</string>
+			<key>to</key>
+			<string>D4115E4F-C91B-432C-BD7E-707F2462EFB5 - D4115E4F-C91B-432C-BD7E-707F2462EFB5</string>
+		</dict>
+		<key>676BDF17-05CA-406E-AE86-18D2E2B96216</key>
+		<dict>
+			<key>from</key>
+			<string>D4115E4F-C91B-432C-BD7E-707F2462EFB5 - D4115E4F-C91B-432C-BD7E-707F2462EFB5</string>
+			<key>to</key>
+			<string>EAE67AA6-73E3-4A91-B371-EA34D1849AE7 - EAE67AA6-73E3-4A91-B371-EA34D1849AE7</string>
+		</dict>
+	</dict>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.mail</string>
+		<key>serviceApplicationPath</key>
+		<string>/Applications/Mail.app</string>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
